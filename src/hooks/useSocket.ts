@@ -6,7 +6,7 @@ export const useSocket = () => {
   const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
-    const socket = io("http://localhost:5000", {
+    const socket = io(`${import.meta.env.VITE_API_SOCKET_URL}`, {
       withCredentials: true,
     });
 
