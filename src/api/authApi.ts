@@ -26,12 +26,15 @@ export const authApi = baseApi.injectEndpoints({
         invalidatesTags: ["Auth"],
       }
     ),
-    getMe: builder.query<User, void>({
-      query: () => "/auth/me", // implement this in backend if not there
+    getSession: builder.query<User, void>({
+      query: () => "/users/session", // implement this in backend if not there
       providesTags: ["Auth"],
     }),
   }),
 });
 
-export const { useRequestOtpMutation, useVerifyOtpMutation, useGetMeQuery } =
-  authApi;
+export const {
+  useRequestOtpMutation,
+  useVerifyOtpMutation,
+  useGetSessionQuery,
+} = authApi;

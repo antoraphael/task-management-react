@@ -1,3 +1,4 @@
+// src/guards/RequireAuth.tsx
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
@@ -6,7 +7,7 @@ const RequireAuth: React.FC = () => {
   const location = useLocation();
 
   if (isLoading) {
-    return <div>Checking session...</div>;
+    return <div>Checking session…</div>;
   }
 
   if (!user) {
